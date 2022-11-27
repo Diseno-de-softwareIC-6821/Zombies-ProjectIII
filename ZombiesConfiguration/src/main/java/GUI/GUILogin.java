@@ -11,14 +11,16 @@ import javax.swing.JOptionPane;
  *
  * @author Esteb
  */
-public class GUIConfiguration extends javax.swing.JFrame {
+public class GUILogin extends javax.swing.JFrame {
     private final String password = "1234";
     private final String user = "admin";
     /**
      * Creates new form GUIConfiguration
      */
-    public GUIConfiguration() {
+    public GUILogin() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -62,9 +64,8 @@ public class GUIConfiguration extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonLogIn, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextFieldUser, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                        .addComponent(jPasswordFieldPassword)))
+                    .addComponent(jTextFieldUser, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(jPasswordFieldPassword))
                 .addContainerGap(141, Short.MAX_VALUE))
             .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelBackgroundLayout.createSequentialGroup()

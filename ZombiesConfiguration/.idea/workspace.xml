@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUIConfiguration.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GUIConfiguration.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUIConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GUIConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUIConfiguration.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GUILogin.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUIConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GUILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Main$1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,12 @@
     </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "213"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.Main" />
