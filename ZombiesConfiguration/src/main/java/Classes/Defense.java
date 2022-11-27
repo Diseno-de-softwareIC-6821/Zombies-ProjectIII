@@ -19,16 +19,28 @@ public class Defense extends Character {
         this.type = type;
     }
 
+    public int getScope() {
+        return scope;
+    }
+
+    public eAttackType getType() {
+        return type;
+    }
+
     public static class DefenseBuilder{
         private CharacterBuilder characterBuilder = new CharacterBuilder().setLevel(0);
 
         private int scope = 0;
-        private eAttackType type;
+        private eAttackType type =eAttackType.CONTACT;
 
         public DefenseBuilder(){}
 
         public DefenseBuilder setType(eAttackType type){
             this.type = type;
+            return this;
+        }
+        public DefenseBuilder setName(String name){
+            characterBuilder.setName(name);
             return this;
         }
         public DefenseBuilder addTexture(int key, String value){
@@ -71,6 +83,7 @@ public class Defense extends Character {
                     character.getDps(), character.getCost(), character.getSpawnLevel(), character.getHousingSpace(),
                     character.getPositionX(), character.getPositionY(), scope, type);
         }
+
     }
 
 }

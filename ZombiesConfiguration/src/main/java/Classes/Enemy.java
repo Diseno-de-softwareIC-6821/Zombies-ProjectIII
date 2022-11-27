@@ -19,10 +19,17 @@ public class Enemy  extends Character{
         this.type = type;
     }
 
+    public eAttackType getType() {
+        return type;
+    }
+
+    public int getScope() {
+        return scope;
+    }
 
     public static class EnemyBuilder{
         private CharacterBuilder characterBuilder = new CharacterBuilder().setLevel(0);
-        private eAttackType type;
+        private eAttackType type =eAttackType.CONTACT;
         private int scope=0;
 
         public EnemyBuilder(){}
@@ -31,8 +38,14 @@ public class Enemy  extends Character{
             this.type = type;
             return this;
         }
+        public EnemyBuilder setName(String name){
+            characterBuilder.setName(name);
+            return this;
+        }
         public EnemyBuilder addTexture(int key, String value){
+            System.out.println("Before adding texture");
             characterBuilder.addTexture(key, value);
+            System.out.println("After adding texture");
             return this;
         }
         public EnemyBuilder setCurrentTexture(String currentTexture){
