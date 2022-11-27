@@ -4,7 +4,10 @@
  */
 package GUI;
 
+import Classes.Enemy;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -16,15 +19,17 @@ import javax.swing.JPanel;
  */
 public class GuiConfiguration extends javax.swing.JFrame {
     private final String backGroundRoute = "src\\main\\java\\Images\\fondoEstrellado.jpg";
-
+    GUILogin parent;
     /**
      * Creates new form GuiConfiguration
      */
-    public GuiConfiguration() {
+    public GuiConfiguration(GUILogin parent) {
         initComponents();
         pintarImagen(jPanelBackGround, backGroundRoute);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.parent = parent;
+   
     }
 
     /**
@@ -37,73 +42,518 @@ public class GuiConfiguration extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelBackGround = new javax.swing.JPanel();
-        jLabelMaintitle = new javax.swing.JLabel();
-        jPanelBuildings = new javax.swing.JPanel();
         jPanelZombies = new javax.swing.JPanel();
+        jLabelEnemy = new javax.swing.JLabel();
+        jLabelEnemyType = new javax.swing.JLabel();
+        jComboBoxEnemyType = new javax.swing.JComboBox<>();
+        jPanelEnemyView = new javax.swing.JPanel();
+        jLabelEnemyScope = new javax.swing.JLabel();
+        jSliderEnemyScope = new javax.swing.JSlider();
+        jLabelEnemyName = new javax.swing.JLabel();
+        jTextFieldEnemyName = new javax.swing.JTextField();
+        jLabelEnemySpawnLevel = new javax.swing.JLabel();
+        jSliderEnemyDps = new javax.swing.JSlider();
+        jLabelEnemyHealth = new javax.swing.JLabel();
+        jSliderEnemyHealth = new javax.swing.JSlider();
+        jLabelEnemyDps = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabelEnemyHousingSpace = new javax.swing.JLabel();
+        jComboBoxHousingSpace = new javax.swing.JComboBox<>();
+        jLabelTexture = new javax.swing.JLabel();
+        jButtonEnemyTextureAdd = new javax.swing.JButton();
+        jButtonEnemyTextureSearch = new javax.swing.JButton();
+        jButtonEnemyClean = new javax.swing.JButton();
+        jButtonEnemyBuild = new javax.swing.JButton();
+        jLabelEnemyTextureType = new javax.swing.JLabel();
+        jComboBoxEnemyTextureType = new javax.swing.JComboBox<>();
+        jLabelMaintitle = new javax.swing.JLabel();
+        jButtonExit = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanelZombies1 = new javax.swing.JPanel();
+        jLabelTypeBuildingType = new javax.swing.JLabel();
+        jComboBoxBuildingType = new javax.swing.JComboBox<>();
+        jPanelBuildingView = new javax.swing.JPanel();
+        jLabelBuildingScope = new javax.swing.JLabel();
+        jSliderBuildingScope = new javax.swing.JSlider();
+        jLabelBuildingType = new javax.swing.JLabel();
+        jTextFieldName1 = new javax.swing.JTextField();
+        jLabelBuildingSpawnLevel = new javax.swing.JLabel();
+        jSliderBuildingDps = new javax.swing.JSlider();
+        jLabelBuildingHealth = new javax.swing.JLabel();
+        jSliderBuildingHealth = new javax.swing.JSlider();
+        jLabelBuildingDps = new javax.swing.JLabel();
+        jComboBoxBuildingSpawnLevel = new javax.swing.JComboBox<>();
+        jLabelBuildingHousingSpace = new javax.swing.JLabel();
+        jComboBoxBuildingHousingSpace = new javax.swing.JComboBox<>();
+        jLabelBuildingTexture = new javax.swing.JLabel();
+        jButtonBuildingTextureAdd = new javax.swing.JButton();
+        jButtonBuildingTextureSearch = new javax.swing.JButton();
+        jButtonBuildingClean = new javax.swing.JButton();
+        jButtonBuild = new javax.swing.JButton();
+        jLabelTextureType = new javax.swing.JLabel();
+        jComboBoxBuildingTextureType = new javax.swing.JComboBox<>();
+        jLabelBuildings = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelMaintitle.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
-        jLabelMaintitle.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMaintitle.setText("Zombies Game Configuration");
-
-        jPanelBuildings.setBackground(new java.awt.Color(0, 102, 102));
-
-        javax.swing.GroupLayout jPanelBuildingsLayout = new javax.swing.GroupLayout(jPanelBuildings);
-        jPanelBuildings.setLayout(jPanelBuildingsLayout);
-        jPanelBuildingsLayout.setHorizontalGroup(
-            jPanelBuildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
-        );
-        jPanelBuildingsLayout.setVerticalGroup(
-            jPanelBuildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         jPanelZombies.setBackground(new java.awt.Color(102, 102, 0));
+
+        jLabelEnemy.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
+        jLabelEnemy.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemy.setText("Enemies");
+
+        jLabelEnemyType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyType.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyType.setText("Type");
+
+        jPanelEnemyView.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanelEnemyViewLayout = new javax.swing.GroupLayout(jPanelEnemyView);
+        jPanelEnemyView.setLayout(jPanelEnemyViewLayout);
+        jPanelEnemyViewLayout.setHorizontalGroup(
+            jPanelEnemyViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 165, Short.MAX_VALUE)
+        );
+        jPanelEnemyViewLayout.setVerticalGroup(
+            jPanelEnemyViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jLabelEnemyScope.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyScope.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyScope.setText("Scope");
+
+        jSliderEnemyScope.setForeground(new java.awt.Color(51, 255, 204));
+        jSliderEnemyScope.setMaximum(5);
+
+        jLabelEnemyName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyName.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyName.setText("Name");
+
+        jLabelEnemySpawnLevel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemySpawnLevel.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemySpawnLevel.setText("Spawn level");
+
+        jSliderEnemyDps.setForeground(new java.awt.Color(0, 255, 0));
+
+        jLabelEnemyHealth.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyHealth.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyHealth.setText("Health");
+
+        jSliderEnemyHealth.setForeground(new java.awt.Color(255, 51, 51));
+
+        jLabelEnemyDps.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyDps.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyDps.setText("DPS");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        jLabelEnemyHousingSpace.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyHousingSpace.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyHousingSpace.setText("Housing space");
+
+        jComboBoxHousingSpace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        jLabelTexture.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelTexture.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTexture.setText("Texture");
+
+        jButtonEnemyTextureAdd.setText("Add");
+
+        jButtonEnemyTextureSearch.setText("Search");
+
+        jButtonEnemyClean.setBackground(new java.awt.Color(255, 255, 0));
+        jButtonEnemyClean.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
+        jButtonEnemyClean.setText("Clean");
+
+        jButtonEnemyBuild.setBackground(new java.awt.Color(204, 255, 204));
+        jButtonEnemyBuild.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
+        jButtonEnemyBuild.setText("Create");
+
+        jLabelEnemyTextureType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelEnemyTextureType.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEnemyTextureType.setText("Texture type");
+
+        jComboBoxEnemyTextureType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanelZombiesLayout = new javax.swing.GroupLayout(jPanelZombies);
         jPanelZombies.setLayout(jPanelZombiesLayout);
         jPanelZombiesLayout.setHorizontalGroup(
             jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombiesLayout.createSequentialGroup()
+                        .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombiesLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelEnemy)
+                                    .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                        .addComponent(jLabelEnemyName)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldEnemyName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                        .addComponent(jLabelTexture)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButtonEnemyTextureSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelEnemyTextureType)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxEnemyTextureType, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombiesLayout.createSequentialGroup()
+                                .addGap(145, 145, 145)
+                                .addComponent(jPanelEnemyView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombiesLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(jButtonEnemyClean, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabelEnemyScope)
+                                    .addComponent(jSliderEnemyHealth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSliderEnemyScope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelEnemyType)
+                                    .addComponent(jLabelEnemySpawnLevel)
+                                    .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                        .addGap(105, 105, 105)
+                                        .addComponent(jButtonEnemyBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                                        .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jSliderEnemyDps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelEnemyDps))
+                                        .addGap(158, 158, 158))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelZombiesLayout.createSequentialGroup()
+                                        .addComponent(jLabelEnemyHealth)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelEnemyHousingSpace)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBoxEnemyType, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxHousingSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(1, 1, 1)))
+                .addGap(28, 28, 28))
+            .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jButtonEnemyTextureAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelZombiesLayout.setVerticalGroup(
             jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
+            .addGroup(jPanelZombiesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelEnemy, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEnemyName)
+                    .addComponent(jTextFieldEnemyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTexture)
+                    .addComponent(jButtonEnemyTextureSearch)
+                    .addComponent(jLabelEnemyTextureType)
+                    .addComponent(jComboBoxEnemyTextureType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jPanelEnemyView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonEnemyTextureAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEnemyDps)
+                    .addComponent(jLabelEnemySpawnLevel)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSliderEnemyDps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEnemyHealth)
+                    .addComponent(jLabelEnemyHousingSpace)
+                    .addComponent(jComboBoxHousingSpace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSliderEnemyHealth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEnemyScope)
+                    .addComponent(jLabelEnemyType)
+                    .addComponent(jComboBoxEnemyType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSliderEnemyScope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelZombiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonEnemyClean, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEnemyBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+        );
+
+        jLabelMaintitle.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
+        jLabelMaintitle.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelMaintitle.setText("Zombies Game Configuration");
+
+        jButtonExit.setBackground(new java.awt.Color(153, 0, 0));
+        jButtonExit.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonExit.setText("Salir");
+        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanelZombies1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabelTypeBuildingType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelTypeBuildingType.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTypeBuildingType.setText("Type");
+
+        jPanelBuildingView.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanelBuildingViewLayout = new javax.swing.GroupLayout(jPanelBuildingView);
+        jPanelBuildingView.setLayout(jPanelBuildingViewLayout);
+        jPanelBuildingViewLayout.setHorizontalGroup(
+            jPanelBuildingViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 165, Short.MAX_VALUE)
+        );
+        jPanelBuildingViewLayout.setVerticalGroup(
+            jPanelBuildingViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jLabelBuildingScope.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingScope.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingScope.setText("Scope");
+
+        jSliderBuildingScope.setForeground(new java.awt.Color(51, 255, 204));
+        jSliderBuildingScope.setMaximum(10);
+
+        jLabelBuildingType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingType.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingType.setText("Name");
+
+        jLabelBuildingSpawnLevel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingSpawnLevel.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingSpawnLevel.setText("Spawn level");
+
+        jSliderBuildingDps.setForeground(new java.awt.Color(0, 255, 0));
+
+        jLabelBuildingHealth.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingHealth.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingHealth.setText("Health");
+
+        jSliderBuildingHealth.setForeground(new java.awt.Color(255, 51, 51));
+
+        jLabelBuildingDps.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingDps.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingDps.setText("DPS");
+
+        jComboBoxBuildingSpawnLevel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        jLabelBuildingHousingSpace.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingHousingSpace.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingHousingSpace.setText("Housing space");
+
+        jComboBoxBuildingHousingSpace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        jLabelBuildingTexture.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelBuildingTexture.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildingTexture.setText("Texture");
+
+        jButtonBuildingTextureAdd.setText("Add");
+
+        jButtonBuildingTextureSearch.setText("Search");
+
+        jButtonBuildingClean.setBackground(new java.awt.Color(255, 255, 51));
+        jButtonBuildingClean.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
+        jButtonBuildingClean.setText("Clean");
+
+        jButtonBuild.setBackground(new java.awt.Color(0, 255, 0));
+        jButtonBuild.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
+        jButtonBuild.setText("Build");
+
+        jLabelTextureType.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabelTextureType.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTextureType.setText("Texture type");
+
+        jComboBoxBuildingTextureType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabelBuildings.setFont(new java.awt.Font("Unispace", 0, 24)); // NOI18N
+        jLabelBuildings.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildings.setText("Buildings");
+
+        javax.swing.GroupLayout jPanelZombies1Layout = new javax.swing.GroupLayout(jPanelZombies1);
+        jPanelZombies1.setLayout(jPanelZombies1Layout);
+        jPanelZombies1Layout.setHorizontalGroup(
+            jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombies1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                                    .addComponent(jLabelBuildingHealth)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelBuildingHousingSpace)
+                                    .addGap(18, 18, 18))
+                                .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jSliderBuildingScope, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jSliderBuildingHealth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabelBuildingScope))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelTypeBuildingType)
+                                        .addComponent(jLabelBuildingSpawnLevel))
+                                    .addGap(43, 43, 43)))
+                            .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSliderBuildingDps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelBuildingDps))
+                                .addGap(154, 154, 154)))
+                        .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxBuildingType, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxBuildingHousingSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxBuildingSpawnLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombies1Layout.createSequentialGroup()
+                        .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombies1Layout.createSequentialGroup()
+                                .addGap(145, 145, 145)
+                                .addComponent(jPanelBuildingView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombies1Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabelBuildings)
+                                    .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                                        .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                                                .addComponent(jLabelBuildingType)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jTextFieldName1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                                                .addComponent(jLabelBuildingTexture)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButtonBuildingTextureSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabelTextureType)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxBuildingTextureType, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelZombies1Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(jButtonBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(154, 154, 154)
+                                .addComponent(jButtonBuildingClean, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(28, 28, 28))
+            .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jButtonBuildingTextureAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelZombies1Layout.setVerticalGroup(
+            jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelZombies1Layout.createSequentialGroup()
+                .addComponent(jLabelBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBuildingType)
+                    .addComponent(jTextFieldName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBuildingTexture)
+                    .addComponent(jButtonBuildingTextureSearch)
+                    .addComponent(jLabelTextureType)
+                    .addComponent(jComboBoxBuildingTextureType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jPanelBuildingView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonBuildingTextureAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBuildingDps)
+                    .addComponent(jLabelBuildingSpawnLevel)
+                    .addComponent(jComboBoxBuildingSpawnLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSliderBuildingDps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBuildingHealth)
+                    .addComponent(jLabelBuildingHousingSpace)
+                    .addComponent(jComboBoxBuildingHousingSpace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSliderBuildingHealth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBuildingScope)
+                    .addComponent(jLabelTypeBuildingType)
+                    .addComponent(jComboBoxBuildingType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSliderBuildingScope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addGroup(jPanelZombies1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonBuildingClean, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonBuild, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelBackGroundLayout = new javax.swing.GroupLayout(jPanelBackGround);
         jPanelBackGround.setLayout(jPanelBackGroundLayout);
         jPanelBackGroundLayout.setHorizontalGroup(
             jPanelBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackGroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelMaintitle, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(248, 248, 248))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackGroundLayout.createSequentialGroup()
+            .addGroup(jPanelBackGroundLayout.createSequentialGroup()
                 .addComponent(jPanelZombies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jPanelBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelZombies1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanelBackGroundLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelMaintitle, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(170, 170, 170)
+                .addComponent(jButtonExit)
+                .addContainerGap())
         );
         jPanelBackGroundLayout.setVerticalGroup(
             jPanelBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBackGroundLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabelMaintitle, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGroup(jPanelBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelBackGroundLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabelMaintitle, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelBackGroundLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelZombies, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelBuildings, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanelZombies1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanelBackGround, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanelBackGround, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,6 +562,11 @@ public class GuiConfiguration extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
+        this.dispose();
+        parent.dispose();
+    }//GEN-LAST:event_jButtonExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,7 +598,7 @@ public class GuiConfiguration extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GuiConfiguration().setVisible(true);
+                new GuiConfiguration(null).setVisible(true);
             }
         });
     }
@@ -162,9 +617,57 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBuild;
+    private javax.swing.JButton jButtonBuildingClean;
+    private javax.swing.JButton jButtonBuildingTextureAdd;
+    private javax.swing.JButton jButtonBuildingTextureSearch;
+    private javax.swing.JButton jButtonEnemyBuild;
+    private javax.swing.JButton jButtonEnemyClean;
+    private javax.swing.JButton jButtonEnemyTextureAdd;
+    private javax.swing.JButton jButtonEnemyTextureSearch;
+    private javax.swing.JButton jButtonExit;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBoxBuildingHousingSpace;
+    private javax.swing.JComboBox<String> jComboBoxBuildingSpawnLevel;
+    private javax.swing.JComboBox<String> jComboBoxBuildingTextureType;
+    private javax.swing.JComboBox<String> jComboBoxBuildingType;
+    private javax.swing.JComboBox<String> jComboBoxEnemyTextureType;
+    private javax.swing.JComboBox<String> jComboBoxEnemyType;
+    private javax.swing.JComboBox<String> jComboBoxHousingSpace;
+    private javax.swing.JLabel jLabelBuildingDps;
+    private javax.swing.JLabel jLabelBuildingHealth;
+    private javax.swing.JLabel jLabelBuildingHousingSpace;
+    private javax.swing.JLabel jLabelBuildingScope;
+    private javax.swing.JLabel jLabelBuildingSpawnLevel;
+    private javax.swing.JLabel jLabelBuildingTexture;
+    private javax.swing.JLabel jLabelBuildingType;
+    private javax.swing.JLabel jLabelBuildings;
+    private javax.swing.JLabel jLabelEnemy;
+    private javax.swing.JLabel jLabelEnemyDps;
+    private javax.swing.JLabel jLabelEnemyHealth;
+    private javax.swing.JLabel jLabelEnemyHousingSpace;
+    private javax.swing.JLabel jLabelEnemyName;
+    private javax.swing.JLabel jLabelEnemyScope;
+    private javax.swing.JLabel jLabelEnemySpawnLevel;
+    private javax.swing.JLabel jLabelEnemyTextureType;
+    private javax.swing.JLabel jLabelEnemyType;
     private javax.swing.JLabel jLabelMaintitle;
+    private javax.swing.JLabel jLabelTexture;
+    private javax.swing.JLabel jLabelTextureType;
+    private javax.swing.JLabel jLabelTypeBuildingType;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBackGround;
-    private javax.swing.JPanel jPanelBuildings;
+    private javax.swing.JPanel jPanelBuildingView;
+    private javax.swing.JPanel jPanelEnemyView;
     private javax.swing.JPanel jPanelZombies;
+    private javax.swing.JPanel jPanelZombies1;
+    private javax.swing.JSlider jSliderBuildingDps;
+    private javax.swing.JSlider jSliderBuildingHealth;
+    private javax.swing.JSlider jSliderBuildingScope;
+    private javax.swing.JSlider jSliderEnemyDps;
+    private javax.swing.JSlider jSliderEnemyHealth;
+    private javax.swing.JSlider jSliderEnemyScope;
+    private javax.swing.JTextField jTextFieldEnemyName;
+    private javax.swing.JTextField jTextFieldName1;
     // End of variables declaration//GEN-END:variables
 }

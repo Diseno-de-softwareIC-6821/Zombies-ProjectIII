@@ -110,7 +110,9 @@ public class GUILogin extends javax.swing.JFrame {
         System.out.println(String.valueOf(jPasswordFieldPassword.getPassword()));
         System.out.println(jTextFieldUser.getText()+" "+ user);
         if(jTextFieldUser.getText().trim().equals(user) && String.valueOf(jPasswordFieldPassword.getPassword()).equals(password)){
-            System.out.println("Open window");
+            GuiConfiguration gui = new GuiConfiguration(this);
+            gui.setVisible(true);
+            this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null, "Incorrect password or username");
         }
