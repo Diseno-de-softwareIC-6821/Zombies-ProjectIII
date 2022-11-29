@@ -12,18 +12,9 @@ import Enums.eAttackType;
 
 import java.awt.Image;
 import java.io.File;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
-/**
- *
- * @author Esteb
- */
 public class GuiConfiguration extends javax.swing.JFrame {
     private final String backGroundRoute = "src\\main\\java\\Images\\fondoEstrellado.jpg";
     GUILogin parent;
@@ -44,11 +35,58 @@ public class GuiConfiguration extends javax.swing.JFrame {
             jComboBoxBuildingTextureType.addItem(String.valueOf(val).toLowerCase());
             jComboBoxEnemyTextureType.addItem(String.valueOf(val).toLowerCase());
         }
-        for(eAttackType type : eAttackType.values()){
-            jComboBoxEnemyType.addItem(type.name().toLowerCase());
-            jComboBoxBuildingType.addItem(type.name().toLowerCase());
-        }
-        
+        jComboBoxEnemyType.setModel(new DefaultComboBoxModel<>(eAttackType.values()));
+        jComboBoxBuildingType.setModel(new DefaultComboBoxModel<>(eAttackType.values()));
+    }
+    public void createDefense(){
+        String name_ = jTextFieldBuildingName.getText();
+        int spawnLevel_ = jComboBoxBuildingSpawnLevel.getSelectedIndex();
+        int dps_ = jSliderBuildingDps.getValue();
+        int health_ = jSliderBuildingHealth.getValue();
+        int scope_ = jSliderBuildingScope.getValue();
+        int housingSpace_ = jComboBoxBuildingHousingSpace.getSelectedIndex();
+        eAttackType type_ = (eAttackType) jComboBoxBuildingType.getSelectedItem();
+        String texture_ = jComboBoxBuildingTextureType.toString();
+
+        Defense defensa = new Defense.DefenseBuilder().
+                setName(name_).
+                setSpawnLevel(spawnLevel_).
+                setDPS(dps_).
+                setHealth(health_).
+                setScope(scope_).
+                setHousingSpace(housingSpace_).
+                setType(type_).
+                build();
+
+        System.out.println("DEFENSA CREADA EXITOSAMENTE");
+
+        String s= Integer.toString(defensa.getLevel());
+        System.out.println(s);
+
+    }
+    public void createEnemie(){
+        String name_ = jTextFieldEnemyName.getText();
+        int spawnLevel_ = jComboBoxEnemySpawnLevel.getSelectedIndex();
+        int dps_ = jSliderEnemyDps.getValue();
+        int health_ = jSliderEnemyHealth.getValue();
+        int scope_ = jSliderEnemyScope.getValue();
+        int housingSpace_ = jComboBoxHousingSpace.getSelectedIndex();
+        eAttackType type_ = (eAttackType) jComboBoxEnemyType.getSelectedItem();
+        String texture_ = jComboBoxEnemyTextureType.toString();
+
+        Enemy zombie = new Enemy.EnemyBuilder().
+                setName(name_).
+                setSpawnLevel(spawnLevel_).
+                setDPS(dps_).
+                setHealth(health_).
+                setScope(scope_).
+                setHousingSpace(housingSpace_).
+                setType(type_).
+                build();
+        System.out.println("ZOMBIE CREADO EXITOSAMENTE");
+
+        String s=Integer.toString(zombie.getLevel());
+        System.out.println(s);
     }
 
     /**
@@ -688,41 +726,23 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuildingTextureSearchActionPerformed
 
     private void jButtonEnemyBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnemyBuildActionPerformed
-            
-            Builder.getInstance().getEnemyBuilder().setName(jTextFieldEnemyName.getText());
-            Builder.getInstance().getEnemyBuilder().setDPS(jSliderEnemyDps.getValue());
-            Builder.getInstance().getEnemyBuilder().setHealth(jSliderEnemyHealth.getValue());
-            Builder.getInstance().getEnemyBuilder().setScope(jSliderEnemyScope.getValue());
-            Builder.getInstance().getEnemyBuilder().setSpawnLevel(jComboBoxEnemySpawnLevel.getSelectedIndex()+1);
-            Builder.getInstance().getEnemyBuilder().setHousingSpace(jComboBoxHousingSpace.getSelectedIndex()+1);
-            Builder.getInstance().getEnemyBuilder().setType(eAttackType.getType(jComboBoxEnemyType.getSelectedIndex()));
-            try{
-            Enemy en = Builder.getInstance().getEnemyBuilder().build();
-            Builder.getInstance().addEnemy(en);
-            }catch(Error e ){
-                JOptionPane.showMessageDialog(null, e);
-            }
+        try{
+            createEnemie();
+        }
+        catch(Error e ){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_jButtonEnemyBuildActionPerformed
 
     private void jButtonBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuildActionPerformed
-            Builder.getInstance().getDefenseBuilder().setName(jTextFieldBuildingName.getText());
-            Builder.getInstance().getDefenseBuilder().setDPS(jSliderBuildingDps.getValue());
-            Builder.getInstance().getDefenseBuilder().setHealth(jSliderBuildingHealth.getValue());
-            Builder.getInstance().getDefenseBuilder().setScope(jSliderBuildingScope.getValue());
-            Builder.getInstance().getDefenseBuilder().setSpawnLevel(jComboBoxBuildingSpawnLevel.getSelectedIndex()+1);
-            Builder.getInstance().getDefenseBuilder().setHousingSpace(jComboBoxHousingSpace.getSelectedIndex()+1);
-            Builder.getInstance().getDefenseBuilder().setType(eAttackType.getType(jComboBoxBuildingType.getSelectedIndex()));
             try{
-            Defense en = Builder.getInstance().getDefenseBuilder().build();
-            Builder.getInstance().addDefense(en);
-            }catch(Error e ){
+                createDefense();
+            }
+            catch(Error e ){
                 JOptionPane.showMessageDialog(null, e);
             }
     }//GEN-LAST:event_jButtonBuildActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -769,7 +789,11 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }
     public String chooseImage(JPanel panel, JButton button){
         JFileChooser fc = new JFileChooser();
+        //FILTO PARA SOLO ACEPTAR PNG Y JPG
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF & PNG", "jpg", "gif","png");
+        fc.setFileFilter(filter);
         int selection = fc.showOpenDialog(null);
+
         String route = "";
         if (selection == JFileChooser.APPROVE_OPTION) {
             //méFile fichero = fc.getSelectedFile();todo para leer el archivo y mostrarlo en el textArea
@@ -794,10 +818,10 @@ public class GuiConfiguration extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxBuildingHousingSpace;
     private javax.swing.JComboBox<String> jComboBoxBuildingSpawnLevel;
     private javax.swing.JComboBox<String> jComboBoxBuildingTextureType;
-    private javax.swing.JComboBox<String> jComboBoxBuildingType;
+    private javax.swing.JComboBox<eAttackType> jComboBoxBuildingType;
     private javax.swing.JComboBox<String> jComboBoxEnemySpawnLevel;
     private javax.swing.JComboBox<String> jComboBoxEnemyTextureType;
-    private javax.swing.JComboBox<String> jComboBoxEnemyType;
+    private javax.swing.JComboBox<eAttackType> jComboBoxEnemyType;
     private javax.swing.JComboBox<String> jComboBoxHousingSpace;
     private javax.swing.JLabel jLabelBuildingDps;
     private javax.swing.JLabel jLabelBuildingHealth;
