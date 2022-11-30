@@ -2,7 +2,9 @@ package ZombiesGame.GUI.GameControl.adm;
 
 import GameClasses.Defense;
 import GameClasses.Game;
+import GameClasses.IPrototypeFactory;
 import ZombiesGame.GUI.GameControl.BoardMarks.Board;
+import ZombiesGame.GUI.GameControl.BoardMarks.Square;
 import ZombiesGame.GUI.GameControl.Settings;
 import ZombiesGame.GUI.GameControl.Threads.DefenseThread;
 import ZombiesGame.GUI.GameControl.Threads.EnemyThread;
@@ -11,18 +13,36 @@ import java.util.ArrayList;
 
 public class Control {
 
-    Board board;
+    private Board board = new Board();
+    private Game game = Game.getInstance();
     ArrayList<DefenseThread> listDefenseThreads = new ArrayList<>();
     ArrayList<EnemyThread> listaEnemiesThreads = new ArrayList<>();
 
-    public Control(Board board) {
-        this.board = board;
+    public Control( ) {
+
     }
 
     public void addDefense(Defense defense){
         DefenseThread defenseThread = new DefenseThread(defense);
         listDefenseThreads.add(defenseThread);
         new Thread(defenseThread).start();
+    }
+
+    //*
+    // Functions for the User
+    // *//
+    public void putBuilding(int x, int y, String building)throws Error{
+        //TODO
+        Square square = board.getSquare(x,y);
+        if(!square.isOccupated()) {
+            //TODO
+            Defense defense = (Defense) IPrototypeFactory.get(building);
+            defense.setPositionX(x);
+            defense.setPositionY(y);
+            square.setCharacter(defense);
+        }else{
+            throw new Error("Square is occupated, choose another one");
+        }
     }
 
 
@@ -71,6 +91,11 @@ public class Control {
         return  choosenPos;
     }
 
+    public Board getBoard() {
+        return board;
+    }
 
-
+    public Game getGame() {
+        return game;
+    }
 }

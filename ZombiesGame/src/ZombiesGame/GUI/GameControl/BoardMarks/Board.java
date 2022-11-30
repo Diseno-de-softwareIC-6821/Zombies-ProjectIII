@@ -47,6 +47,9 @@ public class Board {
         }
 
     }
+    public Square getSquare(int x, int y){
+        return squares[x][y];
+    }
     public ArrayList<Square> getSquaresList(){
         ArrayList<Square> squares = new ArrayList<>();
         for(int i = 0; i < Settings.NUM_SQUARES; i++){

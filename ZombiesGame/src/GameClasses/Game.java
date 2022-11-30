@@ -69,6 +69,14 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
     public ArrayList<Defense> getDefenses() {
         return defenses;
     }
+    public void addEnemy(Enemy enemy){
+        enemies.add(enemy);
+        IPrototypeFactory.add(enemy.getName(),enemy);
+    }
+    public void addDefense(Defense defense){
+        defenses.add(defense);
+        IPrototypeFactory.add(defense.getName(),defense);
+    }
 
     public int getLevel() {
         return level;
@@ -148,9 +156,6 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
 
         @Override
         public Game load(String name) throws Error{
-            if(this.enemiesLoaded.isEmpty() || this.defensesLoaded.isEmpty()){
-                throw new Error("Enemies or defenses not loaded");
-            }
             Game game = new Game();
             game.setName("name");
 
