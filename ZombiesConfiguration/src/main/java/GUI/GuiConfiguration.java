@@ -1,8 +1,6 @@
 package GUI;
 
-import Classes.Builder;
-import Classes.Defense;
-import Classes.Enemy;
+import ClassesBuilder.*;
 import Enums.Texture;
 import Enums.eAttackType;
 
