@@ -127,6 +127,14 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
     private void setEnemies(ArrayList<Enemy> enemies) {
         this.enemies = enemies;
     }
+    public Defense getDefense(String a){
+        for(Defense d : defenses){
+            if(d.getName().equals(a)){
+                return d;
+            }
+        }
+        return null;
+    }
 
     @Override
     public void run() {

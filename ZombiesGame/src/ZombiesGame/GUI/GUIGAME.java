@@ -217,6 +217,11 @@ public class GUIGAME extends javax.swing.JFrame {
         jLabelBuildings.setText("Buildings");
 
         jComboBoxBuildings.setEnabled(false);
+        jComboBoxBuildings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxBuildingsActionPerformed(evt);
+            }
+        });
 
         jButtonPut.setText("Put");
         jButtonPut.setEnabled(false);
@@ -555,7 +560,7 @@ public class GUIGAME extends javax.swing.JFrame {
         try {
             gameBuilder.loadDefense(file);
             JOptionPane.showMessageDialog(null, "Defensas cargadas");
-            this.jComboBoxBuildings.setEnabled(true);
+           
             this.jButtonLevelUp.setEnabled(true);
             this.jSpinnerX.setEnabled(true);
             this.jSpinnerY.setEnabled(true);
@@ -621,8 +626,18 @@ public class GUIGAME extends javax.swing.JFrame {
         this.jButtonCargarEnemigos.setEnabled(false);
         actualizar();
         updateGameComponents();
+         this.jComboBoxBuildings.setEnabled(true);
         this.jButtonPut.setEnabled(true);
     }//GEN-LAST:event_jButtonIniciarNuevaActionPerformed
+
+    private void jComboBoxBuildingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBuildingsActionPerformed
+        if(this.jComboBoxBuildings.getSelectedIndex()>=0 && this.jComboBoxBuildings.isEnabled()){
+            if(Game.getInstance().getDefenses().size()>0){
+                Defense d = Game.getInstance().getDefenses().get(jComboBoxBuildings.getSelectedIndex());
+                pintarImagen(jPanelImageSelectedBuilding, d.getCurrentTexture());
+            }
+        }
+    }//GEN-LAST:event_jComboBoxBuildingsActionPerformed
     private String getFile(){
         JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Guarde el archivo"); 
