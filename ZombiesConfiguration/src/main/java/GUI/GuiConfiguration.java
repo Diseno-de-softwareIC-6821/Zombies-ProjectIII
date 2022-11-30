@@ -392,13 +392,13 @@ public class GuiConfiguration extends javax.swing.JFrame {
         jTableHistory.setForeground(new java.awt.Color(51, 255, 0));
         jTableHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Enemy name:", null},
-                {"Type:", null},
-                {"DPS 1:", null},
-                {"Health 2:", null},
-                {"Scope 3:", null},
-                {"SpawnLevel 4:", null},
-                {"Housing Space 5:", null}
+                {"Enemy name", null},
+                {"Type", null},
+                {"DPS", null},
+                {"Health", null},
+                {"Scope", null},
+                {"Housing Space", null},
+                {"Spawn Level", null}
             },
             new String [] {
                 "", ""
@@ -723,7 +723,20 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuildingTextureSearchActionPerformed
 
     private void jButtonEnemyBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnemyBuildActionPerformed
-
+        String nameE = jTextFieldEnemyName.getText();
+        String tipoE = jComboBoxEnemyType.getSelectedItem().toString();
+        String dpsE = String.valueOf(jSliderEnemyDps.getValue());
+        String healthE = String.valueOf(jSliderEnemyHealth.getValue());
+        String scopeE = String.valueOf(jSliderEnemyScope.getValue());
+        String spawnLevelE = jComboBoxEnemySpawnLevel.getSelectedItem().toString();
+        String housingSE = jComboBoxHousingSpace.getSelectedItem().toString();
+        jTableHistory.setValueAt(nameE, 0, 1);
+        jTableHistory.setValueAt(tipoE, 1, 1);
+        jTableHistory.setValueAt(dpsE, 2, 1);
+        jTableHistory.setValueAt(healthE, 3, 1);
+        jTableHistory.setValueAt(scopeE, 4, 1);
+        jTableHistory.setValueAt(spawnLevelE, 5, 1);
+        jTableHistory.setValueAt(housingSE, 6, 1);
         try{
             createEnemy();
         }
