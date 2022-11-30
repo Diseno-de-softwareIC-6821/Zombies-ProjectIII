@@ -4,11 +4,13 @@
  */
 package Enum;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Esteb
  */
-public enum eAttackType {
+public enum eAttackType implements Serializable{
     BLOCK,
     CONTACT,
     AIR,

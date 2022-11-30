@@ -5,8 +5,8 @@
 package GameClasses;
 
 import Files.IFile;
-import GameControl.Settings;
-import GameControl.Threads.ThreadComponent;
+import ZombiesGame.GUI.GameControl.Settings;
+import ZombiesGame.GUI.GameControl.Threads.ThreadComponent;
 import Interfaces.iLeveled;
 
 import javax.swing.*;
