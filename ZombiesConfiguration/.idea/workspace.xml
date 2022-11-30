@@ -6,23 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Defense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Defense.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Enemy.class" afterDir="false" />
-=======
+
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$1.class" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/BoardMarks/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/BoardMarks/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/BoardMarks/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/BoardMarks/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/ThreadComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/ThreadComponent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Settings.java" afterDir="false" />
->>>>>>> origin/Zombies-Game
+
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/ThreadComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/ThreadComponent.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +35,7 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-=======
->>>>>>> origin/Zombies-Game
+
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,11 +46,11 @@
       </MavenGeneralSettings>
     </option>
   </component>
-<<<<<<< HEAD
+
   <component name="ProjectId" id="2IEMUZZahzVY8MyVzaJA8bI8nQg" />
-=======
+
   <component name="ProjectId" id="2IEc8zsrnzinDVTQM1HeBDWeefF" />
->>>>>>> origin/Zombies-Game
+
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -70,7 +63,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;213&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-<<<<<<< HEAD
+
     &quot;last_opened_file_path&quot;: &quot;C:/Users/maxim/Documents/GitHub/Zombies-ProjectIII/ZombiesConfiguration/CharactersLibraryJava.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -95,7 +88,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-=======
+
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Esteb/OneDrive/Documentos/GitHub/Repositorios Github/Zombies-ProjectIII/ZombiesGame&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -104,7 +97,7 @@
   }
 }</component>
   <component name="RunManager">
->>>>>>> origin/Zombies-Game
+
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.Main" />
       <module name="ZombiesConfiguration" />
@@ -122,20 +115,16 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="" />
-<<<<<<< HEAD
+
       <created>1669742306126</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669742306126</updated>
       <workItem from="1669742307609" duration="28663000" />
       <workItem from="1669789710834" duration="363000" />
-=======
-      <created>1669750028235</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1669750028235</updated>
-      <workItem from="1669750029788" duration="8476000" />
->>>>>>> origin/Zombies-Game
+
+      <workItem from="1669750029788" duration="9124000" />
+
     </task>
     <servers />
   </component>

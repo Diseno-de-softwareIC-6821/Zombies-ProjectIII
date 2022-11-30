@@ -21,7 +21,7 @@ public class DefenseThread extends ThreadComponent{
     }
 
     @Override
-    void defaultComponentValue() {
+    protected void defaultComponentValue() {
         this.setBackground(Color.blue);
         this.setMinimum(0);
         this.setMaximum(this.defense.getHealth());

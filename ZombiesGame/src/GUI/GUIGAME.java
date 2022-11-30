@@ -4,12 +4,17 @@
  */
 package GUI;
 
+import GameClasses.Game;
 import GameControl.BoardMarks.Board;
 import GameControl.Settings;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -62,6 +67,7 @@ public class GUIGAME extends javax.swing.JFrame {
         jButtonLevelUp = new javax.swing.JButton();
         jComboBoxBuildings = new javax.swing.JComboBox<>();
         jLabelBuildingsAvailable = new javax.swing.JLabel();
+        jPanelImageSelectedBuilding = new javax.swing.JPanel();
         jPanelTitlePane = new javax.swing.JPanel();
         jLabelTitle1 = new javax.swing.JLabel();
 
@@ -134,10 +140,23 @@ public class GUIGAME extends javax.swing.JFrame {
                 .addComponent(jPanelBoardX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jButtonExport.setBackground(new java.awt.Color(153, 153, 0));
+        jButtonExport.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButtonExport.setText("Export");
+        jButtonExport.setEnabled(false);
 
+        jButtonLoadGame.setBackground(new java.awt.Color(153, 204, 0));
+        jButtonLoadGame.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonLoadGame.setText("Load Game");
+        jButtonLoadGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoadGameActionPerformed(evt);
+            }
+        });
 
+        jButtonExit.setBackground(new java.awt.Color(204, 102, 0));
+        jButtonExit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonExit.setForeground(new java.awt.Color(255, 255, 255));
         jButtonExit.setText("Exit");
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,7 +168,7 @@ public class GUIGAME extends javax.swing.JFrame {
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle.setText("Status");
 
-        jLabel1.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Housing spaces: ");
 
@@ -158,10 +177,27 @@ public class GUIGAME extends javax.swing.JFrame {
         jLabelLevel.setText("Level");
 
         jButtonLevelUp.setText("Level Up +1");
+        jButtonLevelUp.setEnabled(false);
+
+        jComboBoxBuildings.setEnabled(false);
 
         jLabelBuildingsAvailable.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
         jLabelBuildingsAvailable.setForeground(new java.awt.Color(255, 255, 255));
         jLabelBuildingsAvailable.setText("Buildings");
+
+        jPanelImageSelectedBuilding.setBackground(new java.awt.Color(204, 255, 204));
+        jPanelImageSelectedBuilding.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        javax.swing.GroupLayout jPanelImageSelectedBuildingLayout = new javax.swing.GroupLayout(jPanelImageSelectedBuilding);
+        jPanelImageSelectedBuilding.setLayout(jPanelImageSelectedBuildingLayout);
+        jPanelImageSelectedBuildingLayout.setHorizontalGroup(
+            jPanelImageSelectedBuildingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelImageSelectedBuildingLayout.setVerticalGroup(
+            jPanelImageSelectedBuildingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanelControlsLayout = new javax.swing.GroupLayout(jPanelControls);
         jPanelControls.setLayout(jPanelControlsLayout);
@@ -181,16 +217,21 @@ public class GUIGAME extends javax.swing.JFrame {
                 .addComponent(jLabel1))
             .addGroup(jPanelControlsLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabelBuildingsAvailable)
-                .addGap(39, 39, 39)
-                .addComponent(jComboBoxBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelControlsLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jButtonExport, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jButtonLoadGame, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelControlsLayout.createSequentialGroup()
+                        .addComponent(jButtonExport, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jButtonLoadGame, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelControlsLayout.createSequentialGroup()
+                        .addComponent(jLabelBuildingsAvailable)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(7, 7, 7)
-                .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelControlsLayout.createSequentialGroup()
+                        .addComponent(jPanelImageSelectedBuilding, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(15, 15, 15))
+                    .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanelControlsLayout.setVerticalGroup(
             jPanelControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,11 +247,13 @@ public class GUIGAME extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
                 .addGroup(jPanelControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelBuildingsAvailable)
+                    .addGroup(jPanelControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelBuildingsAvailable)
+                        .addComponent(jComboBoxBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelControlsLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jComboBoxBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(529, 529, 529)
+                        .addComponent(jPanelImageSelectedBuilding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(451, 451, 451)
                 .addGroup(jPanelControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonExport, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonLoadGame, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,6 +334,25 @@ public class GUIGAME extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonExitActionPerformed
 
+    private void jButtonLoadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadGameActionPerformed
+       JFileChooser fc = new JFileChooser();
+        int selection = fc.showOpenDialog(null);
+        String route = "";
+        if (selection == JFileChooser.APPROVE_OPTION) {
+            //méFile fichero = fc.getSelectedFile();todo para leer el archivo y mostrarlo en el textArea
+            File fichero = fc.getSelectedFile(); 
+            route = fichero.getAbsolutePath();
+           try {
+               Game game = Game.load(route);
+               game.getInstance().load(game);
+               this.jButtonLevelUp.setEnabled(true);
+               this.jComboBoxBuildings.setEnabled(true);
+           } catch (IOException | ClassNotFoundException ex) {
+               JOptionPane.showMessageDialog(null, "Error al cargar el juego"+ ex);
+           }
+        }
+    }//GEN-LAST:event_jButtonLoadGameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -345,6 +407,7 @@ public class GUIGAME extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBoardY;
     private javax.swing.JPanel jPanelControls;
     private javax.swing.JPanel jPanelGame;
+    private javax.swing.JPanel jPanelImageSelectedBuilding;
     private javax.swing.JPanel jPanelTitlePane;
     // End of variables declaration//GEN-END:variables
 
