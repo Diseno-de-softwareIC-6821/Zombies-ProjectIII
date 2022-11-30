@@ -30,6 +30,7 @@ public class Settings {
     public static int STARTING_HOUSING_SPACE = 20;
     private int unitTime = 1000;
     private int unitTimeForAttack = 1000;
+    public static final int HOUSING_SPACE_PLUS = 5;
     private static Settings instance = null;
     private static Settings getInstance(){
         if(instance == null){

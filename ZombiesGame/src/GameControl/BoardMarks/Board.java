@@ -1,21 +1,24 @@
 package GameControl.BoardMarks;
 
+import GameControl.Threads.DefenseThread;
+import GameControl.Threads.EnemyThread;
 import GameControl.Settings;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Board {
+    private LinkedList<JLabel> labelsY = new LinkedList<>();
+    private LinkedList<JLabel> labelsX = new LinkedList<>();
     private JLabel lifeTreeImage = new JLabel();
     private Square[][] squares = new Square[Settings.NUM_SQUARES][Settings.NUM_SQUARES];
     private final Font FONT = new Font("Unispace", 0, 15);
     private final Color COLOR = new Color(10,10,10,50);
     private final Border BORDER = BorderFactory.createLineBorder(new Color(200,255,255, 20));
-    public Board(){
-
-    }
+    public Board(){}
     public void buildBoard(JPanel xSpecs, JPanel ySpecs, JPanel board){
         int sizeXsquare = Settings.GAME_BOARD_SIZE / Settings.NUM_SQUARES;
         int panelWidth = xSpecs.getWidth(); // Will be the same panel yspecs
@@ -35,9 +38,12 @@ public class Board {
             labelX.setSize(panelWidth/2, sizeXsquare);
             labelX.setFont(FONT);
             labelX.setText(String.valueOf(i));
+            labelX.setBackground(Color.BLACK);
             JLabel labelY  = cloneLabel(labelX);
             labelX.setLocation(0, i*sizeXsquare);
             labelY.setLocation(i*sizeXsquare, 0);
+            labelsX.add(labelX);
+            labelsY.add(labelY);
             xSpecs.add(labelY);
             ySpecs.add(labelX);
         }
@@ -77,5 +83,23 @@ public class Board {
         pboard.add(lifeTreeImage);
         pboard.repaint();
 
+    }
+    //Functions to see selected coordinates
+    public LinkedList<JLabel> getLabelsY() {
+        return labelsY;
+    }
+    public void refreshLabels(){
+        for(JLabel label: labelsY){
+            label.setForeground(Color.WHITE);
+            label.repaint();
+        }
+        for(JLabel label: labelsX){
+            label.setForeground(Color.WHITE);
+            label.repaint();
+        }
+    }
+
+    public LinkedList<JLabel> getLabelsX() {
+        return labelsX;
     }
 }

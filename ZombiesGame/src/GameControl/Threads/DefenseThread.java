@@ -1,10 +1,10 @@
-package GameControl;
+package GameControl.Threads;
 
 import GameClasses.Defense;
 
 import java.awt.*;
 
-public class DefenseThread extends ThreadComponent{
+public class DefenseThread extends ThreadComponent {
 
     private Defense defense;
 

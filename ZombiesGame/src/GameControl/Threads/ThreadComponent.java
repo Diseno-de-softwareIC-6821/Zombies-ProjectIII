@@ -1,4 +1,4 @@
-package GameControl;
+package GameControl.Threads;
 import Classes.Character;
 import javax.swing.*;
 

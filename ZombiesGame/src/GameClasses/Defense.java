@@ -10,12 +10,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import Enum.eAttackType;
+import Interfaces.IProto;
+
 
 /**
  *
  * @author Esteb
  */
-public class Defense extends Character implements Serializable{
+public class Defense extends Character implements Serializable, IProto<Defense> {
     private int scope;
     private eAttackType type ;
     public Defense(HashMap<Integer, String> textureMap, String currentTexture,
@@ -29,7 +31,13 @@ public class Defense extends Character implements Serializable{
         this.scope = scope;
         this.type = type;
     }
-    
+    @Override
+    public Defense clone(){
+        return new Defense(this.getTextureMap(), this.getCurrentTexture(),this.getItems(), this.getSelectedItem(), this.getName(),
+                this.getLevel(), this.getExperience(), this.getHealth(),this.getDamage(), this.getDefense(),
+                this.getSpeed(), this.getDps(), this.getCost(), this.getSpawnLevel(), this.getHousingSpace(),
+                this.getPositionX(), this.getPositionY(), this.scope , this.type);
+    }
     
     
     

@@ -7,6 +7,9 @@ package GameClasses;
 import Classes.Character;
 import Classes.Item;
 import Enum.eAttackType;
+import Interfaces.IProto;
+
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +17,7 @@ import java.util.HashMap;
  *
  * @author Esteb
  */
-public class Enemy extends Character implements Serializable{
+public class Enemy extends Character implements Serializable, IProto<Enemy> {
     private eAttackType type;
     private int scope;
     private int targetScope= 0;
@@ -43,4 +46,12 @@ public class Enemy extends Character implements Serializable{
     public void removeTarget(Defense target) {targets.remove(target);}
     public void addTarget(Defense target) {targets.add(target);}
     public Defense getFirst(){return targets.get(0);}
+
+    @Override
+    public Enemy clone() {
+        return new Enemy(this.getTextureMap(), this.getCurrentTexture(),this.getItems(), this.getSelectedItem(), this.getName(),
+                this.getLevel(), this.getExperience(), this.getHealth(),this.getDamage(), this.getDefense(),
+                 this.getSpeed(), this.getDps(), this.getCost(), this.getSpawnLevel(), this.getHousingSpace(),
+                this.getPositionX(), this.getPositionY(), this.scope , this.getType());
+    }
  }

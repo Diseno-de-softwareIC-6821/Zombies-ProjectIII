@@ -1,11 +1,10 @@
-package GameControl;
+package GameControl.Threads;
 
-import Classes.Character;
 import GameClasses.Enemy;
 
 import java.awt.*;
 
-public class EnemyThread extends ThreadComponent{
+public class EnemyThread extends ThreadComponent {
     private Enemy enemy;
 
     public EnemyThread(Enemy enemy) {

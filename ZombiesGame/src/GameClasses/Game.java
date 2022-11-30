@@ -5,9 +5,8 @@
 package GameClasses;
 
 import Files.IFile;
-import GameControl.DefenseThread;
 import GameControl.Settings;
-import GameControl.ThreadComponent;
+import GameControl.Threads.ThreadComponent;
 import Interfaces.iLeveled;
 
 import java.awt.*;
@@ -25,11 +24,12 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
     private ArrayList<Defense> defenses = new ArrayList<>();
     private int level = 1;
     private boolean inGame = true;
+    private int housingSpaces = 20; //start with 20 housing spaces
 
     private static Game instance = null;
 
 
-    public Game getInstance(){
+    public static Game getInstance(){
         if(instance == null){
             instance = new Game();
         }
@@ -48,6 +48,7 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
 
     @Override
     public void levelUp() {
+        housingSpaces+=Settings.HOUSING_SPACE_PLUS;//plus 5 housing spaces
         level++;
     }
 
