@@ -9,6 +9,7 @@ import GameControl.Settings;
 import GameControl.Threads.ThreadComponent;
 import Interfaces.iLeveled;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -97,6 +98,14 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
         this.setValue(life_tree.getHealth());
     }
 
+    private void setDefenses(ArrayList<Defense> defenses) {
+        this.defenses = defenses;
+    }
+
+    private void setEnemies(ArrayList<Enemy> enemies) {
+        this.enemies = enemies;
+    }
+
     @Override
     public void run() {
         while(life_tree.getHealth()> 0 && inGame){
@@ -105,4 +114,50 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
         inGame = false;
 
     }
+    public static class GameBuilder implements IFile<String, Game>{
+        private ArrayList<Defense> defensesLoaded = new ArrayList<>();
+        private ArrayList<Enemy> enemiesLoaded = new ArrayList<>();
+        public void loadDefense(String classToLoad) throws IOException, ClassNotFoundException {
+            FileInputStream fis = new FileInputStream(classToLoad);
+            ObjectInputStream entry = new ObjectInputStream(fis);
+            this.defensesLoaded= (ArrayList<Defense>) entry.readObject();
+            System.out.println("Defenses loaded");
+            for (Enemy enemy : this.enemiesLoaded) {
+                System.out.println(enemy.getName());
+            }
+        }
+        public void loadEnemy(String classToLoad) throws IOException, ClassNotFoundException {
+            FileInputStream fis = new FileInputStream(classToLoad);
+            ObjectInputStream entry = new ObjectInputStream(fis);
+            this.enemiesLoaded = (ArrayList<Enemy>) entry.readObject();
+            System.out.println("Enemies loaded");
+            for (Enemy enemy : this.enemiesLoaded) {
+                System.out.println(enemy.getName());
+            }
+        }
+        public String getFile(){
+            JFileChooser fc = new JFileChooser();
+            fc.setDialogTitle("Guarde el archivo");
+            int selection = fc.showSaveDialog(null);
+            if (selection == JFileChooser.APPROVE_OPTION) {
+                System.out.println("Get selected file "+fc.getSelectedFile().getAbsolutePath());
+                return fc.getSelectedFile().getAbsolutePath();
+            }
+            return "";
+        }
+
+        @Override
+        public Game load(String name) throws Error{
+            if(this.enemiesLoaded.isEmpty() || this.defensesLoaded.isEmpty()){
+                throw new Error("Enemies or defenses not loaded");
+            }
+            Game game = new Game();
+            game.setName("name");
+
+            game.setDefenses(defensesLoaded);
+            game.setEnemies(enemiesLoaded);
+            return game;
+        }
+    }
+
 }

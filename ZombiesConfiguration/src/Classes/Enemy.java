@@ -1,23 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package GameClasses;
+package Classes;
 
-import Classes.Character;
-import Classes.Item;
-import Enum.eAttackType;
-import Interfaces.IProto;
+import Enums.eAttackType;
 
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-/**
- *
- * @author Esteb
- */
-public class Enemy extends Character implements Serializable, IProto<Enemy> {
+import Classes.Character;
+import Interfaces.IProto;
+import java.io.Serializable;
+public class Enemy extends Character implements Serializable, IProto<Enemy>{
     private eAttackType type;
     private int scope;
     private int targetScope= 0;
@@ -40,13 +30,13 @@ public class Enemy extends Character implements Serializable, IProto<Enemy> {
     public int getScope() {
         return scope;
     }
+    
+        public void removeTarget(Defense target) {targets.remove(target);}
+        public void addTarget(Defense target) {targets.add(target);}
+        public Defense getFirst(){return targets.get(0);}
 
-    public void removeTarget(Defense target) {targets.remove(target);}
-    public void addTarget(Defense target) {targets.add(target);}
-    public Defense getFirst(){return targets.get(0);}
-
-    public static class EnemyBuilder{
-
+        public static class EnemyBuilder{
+            
         private CharacterBuilder characterBuilder = new CharacterBuilder().setLevel(0);
         private eAttackType type =eAttackType.CONTACT;
         private int scope=0;
@@ -98,19 +88,19 @@ public class Enemy extends Character implements Serializable, IProto<Enemy> {
                     character.getDps(), character.getCost(), character.getSpawnLevel(), character.getHousingSpace(),
                     character.getPositionX(), character.getPositionY(), scope, type);
         }
-
-
-
-
-
+       
+        
+    
+        
+        
     }
-    //BALANCER CLASS
-
+       //BALANCER CLASS
+           
     @Override
     public Enemy clone() {
         return new Enemy(this.getTextureMap(), this.getCurrentTexture(),this.getItems(), this.getSelectedItem(), this.getName(),
                 this.getLevel(), this.getExperience(), this.getHealth(),this.getDamage(), this.getDefense(),
-                this.getSpeed(), this.getDps(), this.getCost(), this.getSpawnLevel(), this.getHousingSpace(),
+                 this.getSpeed(), this.getDps(), this.getCost(), this.getSpawnLevel(), this.getHousingSpace(),
                 this.getPositionX(), this.getPositionY(), this.scope , this.getType());
     }
- }
+}

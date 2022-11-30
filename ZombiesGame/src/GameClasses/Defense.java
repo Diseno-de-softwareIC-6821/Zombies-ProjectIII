@@ -18,8 +18,9 @@ import Interfaces.IProto;
  * @author Esteb
  */
 public class Defense extends Character implements Serializable, IProto<Defense> {
-    private int scope;
+     private int scope;
     private eAttackType type ;
+
     public Defense(HashMap<Integer, String> textureMap, String currentTexture,
             ArrayList<Item> items, Item selectedItem, String name, int level,
             int experience, int health, int damage, int defense, int speed,

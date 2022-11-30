@@ -1,113 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/IPrototypeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/adm/Control.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/Interfaces/IProto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Defense.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Defense.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameClasses/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/BoardMarks/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/BoardMarks/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/DefenseThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/EnemyThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GameControl/ThreadComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Defense.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Defense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/DefenseThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Threads/DefenseThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/EnemyThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Threads/EnemyThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/ThreadComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Threads/ThreadComponent.java" afterDir="false" />
+    <list default="true" id="6818e168-4329-4100-a7c6-e6894cd123ed" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZombiesConfiguration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ZombiesConfiguration.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZombiesConfiguration.ipr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZombiesConfiguration.iws" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClassesBuilder/Builder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClassesBuilder/Defense.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClassesBuilder/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Enums/Texture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Enums/eAttackType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Errors/Error.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUILogin.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUILogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ArbolDeLaVida.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ArmaAerea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ArmaAtaqueMultiple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ArmaContacto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ArmaImpacto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ArmaMedioAlcance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/Eduardo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/Muralla.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ZombieAereo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ZombieAlcanceMedio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ZombieContacto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/ZombieTanque.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Images/fondoEstrellado.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ZombiesConfiguration-1.0-SNAPSHOT-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ZombiesConfiguration-1.0-SNAPSHOT-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ZombiesConfiguration-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/Builder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/Defense.DefenseBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/Defense.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/Enemy.EnemyBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/Enemy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/class-use/Builder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/class-use/Defense.DefenseBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/class-use/Defense.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/class-use/Enemy.EnemyBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/class-use/Enemy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/ClassesBuilder/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/Texture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/class-use/Texture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/class-use/eAttackType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/eAttackType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Enums/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Errors/Error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Errors/class-use/Error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Errors/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Errors/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/Errors/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/GUILogin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/GuiConfiguration.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/class-use/GUILogin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/class-use/GuiConfiguration.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/class-use/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/GUI/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/copy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/jquery-ui.overrides.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/legal/COPYRIGHT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/script-dir/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/search-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-javadoc-plugin-stale-data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/Interfaces/IProto.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Enum" />
-      </list>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2IEc8zsrnzinDVTQM1HeBDWeefF" />
+  <component name="ProjectId" id="2IGgT4rVBV6cJvicQeGWvpjz2Gq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;false&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;213&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Esteb/OneDrive/Documentos/GitHub/Repositorios Github/Zombies-ProjectIII/ZombiesGame&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Esteb/OneDrive/Documentos/GitHub/Repositorios Github/Zombies-ProjectIII/ZombiesConfiguration"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="GUI.Main" />
-      <module name="ZombiesConfiguration" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="" />
-      <created>1669750028235</created>
+      <changelist id="6818e168-4329-4100-a7c6-e6894cd123ed" name="Changes" comment="" />
+      <created>1669813339049</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669750028235</updated>
-      <workItem from="1669750029788" duration="9124000" />
+      <updated>1669813339049</updated>
+      <workItem from="1669813340928" duration="696000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
