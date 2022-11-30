@@ -281,9 +281,7 @@ public class GUIGAME extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 81, Short.MAX_VALUE))
+            .addComponent(jPanelBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -373,5 +371,6 @@ public class GUIGAME extends javax.swing.JFrame {
         jPanelGame.setBackground(new Color(10,10 ,10 ,10));
         jPanelTitlePane.setBackground(new Color(10,10,10,120));
         board.buildBoard(jPanelBoardX, jPanelBoardY, jPanelBoardSquares);
+        board.paintLifeTree(jPanelBoardSquares);
     }
 }

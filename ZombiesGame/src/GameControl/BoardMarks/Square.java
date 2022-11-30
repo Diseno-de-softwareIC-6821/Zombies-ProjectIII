@@ -4,9 +4,15 @@ import javax.swing.*;
 import Classes.Character;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Square {
-    public static final JPanel SQUARE_MODEL = new JPanel();
+    public static final JPanel SQUARE_MODEL = new JPanel(){
+        @Override
+        public boolean isOptimizedDrawingEnabled() {
+            return false;
+        }
+    };
     private int x;
     private int y;
     private JPanel panel= new JPanel();
@@ -46,6 +52,8 @@ public class Square {
         this.panel.add(labelImage);
         this.panel.repaint();
     }
+
+
 
     public int getX() {
         return x;

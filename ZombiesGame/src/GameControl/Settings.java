@@ -2,6 +2,7 @@ package GameControl;
 
 public class Settings {
     public static String BACKGROUND = "src\\Images\\fondo.jpg";
+    public static String LIGFE_TREE_ROUTE = "src\\Images\\ArbolDeLaVida.png";
     public static final  int GAME_BOARD_SIZE = 700;
     public static final int NUM_SQUARES = 25; //25x25
     public static  double MAX_IMPROVEMENT_RATE = 0.5;

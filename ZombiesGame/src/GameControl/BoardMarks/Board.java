@@ -5,8 +5,10 @@ import GameControl.Settings;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Board {
+    private JLabel lifeTreeImage = new JLabel();
     private Square[][] squares = new Square[Settings.NUM_SQUARES][Settings.NUM_SQUARES];
     private final Font FONT = new Font("Unispace", 0, 15);
     private final Color COLOR = new Color(10,10,10,50);
@@ -41,6 +43,15 @@ public class Board {
         }
 
     }
+    public ArrayList<Square> getSquaresList(){
+        ArrayList<Square> squares = new ArrayList<>();
+        for(int i = 0; i < Settings.NUM_SQUARES; i++){
+            for(int j = 0; j < Settings.NUM_SQUARES; j++){
+                squares.add(this.squares[i][j]);
+            }
+        }
+        return squares;
+    }
     private JLabel cloneLabel(JLabel labelCloneable) {
         JLabel newLabel = new JLabel();
         newLabel.setForeground(labelCloneable.getForeground());
@@ -48,5 +59,23 @@ public class Board {
         newLabel.setFont(labelCloneable.getFont());
         newLabel.setText(labelCloneable.getText());
         return newLabel;
+    }
+
+    public void paintLifeTree(JPanel pboard){
+        ImageIcon image = new ImageIcon(Settings.LIGFE_TREE_ROUTE);
+        lifeTreeImage.setBounds(
+                (pboard.getWidth()/2)-2*(Settings.GAME_BOARD_SIZE/Settings.NUM_SQUARES),
+                (pboard.getHeight()/2)- (4*(Settings.GAME_BOARD_SIZE/Settings.NUM_SQUARES)/2),
+                3*(Settings.GAME_BOARD_SIZE/Settings.NUM_SQUARES),
+                3*(Settings.GAME_BOARD_SIZE/Settings.NUM_SQUARES));
+
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(
+                lifeTreeImage.getWidth(),
+                lifeTreeImage.getHeight(),
+                Image.SCALE_DEFAULT));
+        lifeTreeImage.setIcon(icon);
+        pboard.add(lifeTreeImage);
+        pboard.repaint();
+
     }
 }
