@@ -2,12 +2,13 @@ package Classes;
 
 import Interfaces.iLeveled;
 import Interfaces.iPrototype;
+import java.io.Serializable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class Character implements iLeveled, iPrototype {
+public class Character implements iLeveled, iPrototype, Serializable {
 
     HashMap<Integer, String> textureMap;
     String currentTexture;

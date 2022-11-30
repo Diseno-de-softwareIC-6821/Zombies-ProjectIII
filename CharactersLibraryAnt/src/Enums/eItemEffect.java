@@ -1,6 +1,8 @@
 package Enums;
 
-public enum eItemEffect {
+import java.io.Serializable;
+
+public enum eItemEffect implements Serializable{
     HEALING,
     DAMAGE,
     BUFF,

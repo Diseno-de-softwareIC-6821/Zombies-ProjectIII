@@ -1,6 +1,8 @@
 package Interfaces;
 
-public interface iLeveled {
+import java.io.Serializable;
+
+public interface iLeveled   {
     void levelUp();
     void levelDown();
 }

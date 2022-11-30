@@ -1,6 +1,8 @@
 package Enums;
 
-public enum eItemClass {
+import java.io.Serializable;
+
+public enum eItemClass implements Serializable{
     EXPLOSIVE,
     MELEE,
     RANGED,

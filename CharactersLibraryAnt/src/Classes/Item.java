@@ -3,10 +3,11 @@ package Classes;
 import Enums.eItemClass;
 import Enums.eItemEffect;
 import Interfaces.iPrototype;
+import java.io.Serializable;
 
 import java.util.HashMap;
 
-public class Item implements iPrototype {
+public class Item implements iPrototype ,Serializable{
 
     HashMap<Integer, String> textureMap;
     String currentTexture;
