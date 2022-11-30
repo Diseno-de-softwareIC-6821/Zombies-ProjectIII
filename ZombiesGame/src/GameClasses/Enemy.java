@@ -7,15 +7,18 @@ package GameClasses;
 import Classes.Character;
 import Classes.Item;
 import Enum.eAttackType;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 /**
  *
  * @author Esteb
  */
-public class Enemy extends Character{
+public class Enemy extends Character implements Serializable{
     private eAttackType type;
     private int scope;
+    private int targetScope= 0;
+    private ArrayList<Defense> targets = new ArrayList<>();
 
     public Enemy(HashMap<Integer, String> textureMap, String currentTexture, ArrayList<Item> items, Item selectedItem,
                  String name, int level, int experience, int health, int damage, int defense, int speed, int dps,
@@ -35,5 +38,9 @@ public class Enemy extends Character{
         return scope;
     }
 
-    
+    //Queue targets implementation
+
+    public void removeTarget(Defense target) {targets.remove(target);}
+    public void addTarget(Defense target) {targets.add(target);}
+    public Defense getFirst(){return targets.get(0);}
  }
