@@ -20,7 +20,7 @@ public class EnemyThread extends ThreadComponent{
     }
 
     @Override
-    void defaultComponentValue() {
+    protected void defaultComponentValue() {
         this.setBackground(Color.red);
         this.setMinimum(0);
         this.setMaximum(enemy.getHealth());
