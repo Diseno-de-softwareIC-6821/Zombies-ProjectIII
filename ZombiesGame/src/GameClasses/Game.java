@@ -43,6 +43,12 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
         this.enemies = classToLoad.getEnemies();
         this.defenses = classToLoad.getDefenses();
         this.level = classToLoad.getLevel();
+        for(Enemy a :this.enemies){
+            IPrototypeFactory.add(a.getName(),a);
+        }
+        for(Defense b : this.defenses){
+            IPrototypeFactory.add(b.getName(),b);
+        }
         return "Game loaded";
     }
 
@@ -130,7 +136,7 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
             ObjectInputStream entry = new ObjectInputStream(fis);
             this.defensesLoaded= (ArrayList<Defense>) entry.readObject();
             System.out.println("Defenses loaded");
-            for (Enemy enemy : this.enemiesLoaded) {
+            for (Defense enemy : this.defensesLoaded) {
                 System.out.println(enemy.getName());
             }
         }

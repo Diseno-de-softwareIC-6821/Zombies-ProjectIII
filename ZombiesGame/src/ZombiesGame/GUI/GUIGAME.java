@@ -550,7 +550,6 @@ public class GUIGAME extends javax.swing.JFrame {
 
     private void jButtonCargarDefensasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarDefensasActionPerformed
 
-        Game.getInstance().addDefense(Settings.PRUEBA_DEFENSA);
         String file = gameBuilder.getFile();
         try {
             gameBuilder.loadDefense(file);
@@ -578,7 +577,7 @@ public class GUIGAME extends javax.swing.JFrame {
         jList1.updateUI();
     }
     private void jButtonCargarEnemigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarEnemigosActionPerformed
-        Game.getInstance().addEnemy(Settings.PRUEBA_ZOMBIE);
+
         String file = gameBuilder.getFile();
         try {
             gameBuilder.loadEnemy(file);
@@ -607,6 +606,7 @@ public class GUIGAME extends javax.swing.JFrame {
         jLabelName.setText("Player : "+player);
         this.jButtonCargarDefensas.setEnabled(false);
         this.jButtonCargarEnemigos.setEnabled(false);
+        actualizarComboBox();
     }//GEN-LAST:event_jButtonIniciarNuevaActionPerformed
     private String getFile(){
         JFileChooser fc = new JFileChooser();
