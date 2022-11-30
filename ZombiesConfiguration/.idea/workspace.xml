@@ -5,24 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/Files/IFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/LifeTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/DefenseThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/EnemyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/ThreadComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/Images/ArbolDeLaVida.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ZombiesGame/src/Images/fondo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZombiesGame/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Defense.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Defense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameClasses/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/GUI/GUIGAME.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/out/production/ZombiesGame/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GUI/GUIGAME.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ZombiesGame/src/GameControl/BoardMarks/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

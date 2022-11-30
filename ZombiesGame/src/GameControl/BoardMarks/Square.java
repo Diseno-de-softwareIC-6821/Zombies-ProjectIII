@@ -14,6 +14,8 @@ public class Square {
     private boolean isOccupated = false;
     private Character character;
 
+ 
+
     public Square(int x, int y, JPanel PANE){
         this.x = x;
         this.y = y;
