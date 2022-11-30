@@ -28,10 +28,7 @@ public class Builder {
         }
         return instance;
     }
-    
-    
-    
-    
+
     public void addEnemy(Enemy enemy)throws Error{
         if(validateCharacter(enemy)){
             enemieslist.add(enemy);

@@ -33,6 +33,7 @@ public class Defense extends Character {
         private int scope = 0;
         private eAttackType type =eAttackType.CONTACT;
 
+
         public DefenseBuilder(){}
 
         public DefenseBuilder setType(eAttackType type){

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import Classes.Builder;
@@ -33,10 +29,13 @@ public class GuiConfiguration extends javax.swing.JFrame {
         Builder.getInstance();
     }
     public void init_other_components(){
-        for(Texture val: Texture.values()){
-            jComboBoxBuildingTextureType.addItem(String.valueOf(val).toLowerCase());
-            jComboBoxEnemyTextureType.addItem(String.valueOf(val).toLowerCase());
-        }
+        jComboBoxBuildingTextureType.setVisible(false);
+        jComboBoxEnemyTextureType.setVisible(false);
+        jButtonEnemyTextureAdd.setVisible(false);
+        jButtonBuildingTextureAdd.setVisible(false);
+        jLabelEnemyTextureType.setVisible(false);
+        jLabelTextureType.setVisible(false);
+
         jComboBoxEnemyType.setModel(new DefaultComboBoxModel<>(eAttackType.values()));
         jComboBoxBuildingType.setModel(new DefaultComboBoxModel<>(eAttackType.values()));
     }
@@ -48,7 +47,6 @@ public class GuiConfiguration extends javax.swing.JFrame {
         int scope_ = jSliderBuildingScope.getValue();
         int housingSpace_ = jComboBoxBuildingHousingSpace.getSelectedIndex();
         eAttackType type_ = (eAttackType) jComboBoxBuildingType.getSelectedItem();
-        String texture_ = jComboBoxBuildingTextureType.toString();
 
         Defense defensa = new Defense.DefenseBuilder().
                 setName(name_).
@@ -58,15 +56,16 @@ public class GuiConfiguration extends javax.swing.JFrame {
                 setScope(scope_).
                 setHousingSpace(housingSpace_).
                 setType(type_).
+                setCurrentTexture(routeD).
                 build();
 
         System.out.println("DEFENSA CREADA EXITOSAMENTE");
-
-        String s= Integer.toString(defensa.getLevel());
+        System.out.println(routeE);
+        String s = Integer.toString(defensa.getLevel());
         System.out.println(s);
 
     }
-    public void createEnemie(){
+    public void createEnemy(){
         String name_ = jTextFieldEnemyName.getText();
         int spawnLevel_ = jComboBoxEnemySpawnLevel.getSelectedIndex();
         int dps_ = jSliderEnemyDps.getValue();
@@ -74,7 +73,6 @@ public class GuiConfiguration extends javax.swing.JFrame {
         int scope_ = jSliderEnemyScope.getValue();
         int housingSpace_ = jComboBoxHousingSpace.getSelectedIndex();
         eAttackType type_ = (eAttackType) jComboBoxEnemyType.getSelectedItem();
-        String texture_ = jComboBoxEnemyTextureType.toString();
 
         Enemy zombie = new Enemy.EnemyBuilder().
                 setName(name_).
@@ -84,11 +82,11 @@ public class GuiConfiguration extends javax.swing.JFrame {
                 setScope(scope_).
                 setHousingSpace(housingSpace_).
                 setType(type_).
-                //setCurrentTexture();
+                setCurrentTexture(routeE).
                 build();
         System.out.println("ZOMBIE CREADO EXITOSAMENTE");
-
-        String s=Integer.toString(zombie.getLevel());
+        System.out.println(routeD);
+        String s= Integer.toString(zombie.getLevel());
         System.out.println(s);
     }
 
@@ -394,13 +392,13 @@ public class GuiConfiguration extends javax.swing.JFrame {
         jTableHistory.setForeground(new java.awt.Color(51, 255, 0));
         jTableHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Warrior:", null},
-                {"Element:", null},
-                {"Weapon 1:", null},
-                {"Weapon 2:", null},
-                {"Weapon 3:", null},
-                {"Weapon 4:", null},
-                {"Weapon 5:", null}
+                {"Enemy name:", null},
+                {"Type:", null},
+                {"DPS 1:", null},
+                {"Health 2:", null},
+                {"Scope 3:", null},
+                {"SpawnLevel 4:", null},
+                {"Housing Space 5:", null}
             },
             new String [] {
                 "", ""
@@ -695,14 +693,14 @@ public class GuiConfiguration extends javax.swing.JFrame {
 
     private void jButtonEnemyTextureAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnemyTextureAddActionPerformed
         this.setEnabled(false);
-        String tempRoute = Builder.getInstance().getActualEnemyRoute();
-        int texttype = jComboBoxEnemyTextureType.getSelectedIndex();
-        JOptionPane.showMessageDialog(null, "Enemigo añadido!\n"+tempRoute);
+        //String tempRoute = Builder.getInstance().getActualEnemyRoute();
+        //int texttype = jComboBoxEnemyTextureType.getSelectedIndex();
+        //JOptionPane.showMessageDialog(null, "Enemigo añadido!\n"+tempRoute);
     }//GEN-LAST:event_jButtonEnemyTextureAddActionPerformed
 
     private void jButtonBuildingTextureAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuildingTextureAddActionPerformed
         this.setEnabled(false);
-        JOptionPane.showMessageDialog(null, "Defensa agregada\n"+Builder.getInstance().getActualDefenseRoute());
+        //JOptionPane.showMessageDialog(null, "Defensa agregada\n"+Builder.getInstance().getActualDefenseRoute());
     }//GEN-LAST:event_jButtonBuildingTextureAddActionPerformed
 
     private void jButtonEnemyTextureSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnemyTextureSearchActionPerformed
@@ -725,8 +723,9 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuildingTextureSearchActionPerformed
 
     private void jButtonEnemyBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnemyBuildActionPerformed
+
         try{
-            createEnemie();
+            createEnemy();
         }
         catch(Error e ){
             JOptionPane.showMessageDialog(null, e);
@@ -734,12 +733,13 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEnemyBuildActionPerformed
 
     private void jButtonBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuildActionPerformed
-            try{
-                createDefense();
-            }
-            catch(Error e ){
+
+        try{
+            createDefense();
+        }
+        catch(Error e ){
                 JOptionPane.showMessageDialog(null, e);
-            }
+        }
     }//GEN-LAST:event_jButtonBuildActionPerformed
 
     public static void main(String args[]) {
@@ -788,7 +788,7 @@ public class GuiConfiguration extends javax.swing.JFrame {
     }
     public String chooseImage(JPanel panel, JButton button){
         JFileChooser fc = new JFileChooser();
-        //FILTO PARA SOLO ACEPTAR PNG Y JPG
+        //FILTRO PARA SOLO ACEPTAR PNG Y JPG
         FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF & PNG", "jpg", "gif","png");
         fc.setFileFilter(filter);
         int selection = fc.showOpenDialog(null);

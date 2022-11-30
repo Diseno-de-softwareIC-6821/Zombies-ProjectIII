@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Builder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Defense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Defense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Defense$DefenseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Defense$DefenseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Defense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Defense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Enemy$EnemyBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Enemy$EnemyBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUILogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUILogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$8.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,14 +65,14 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "213",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/maxim/Documents/GitHub/Zombies-ProjectIII/ZombiesConfiguration",
+    "last_opened_file_path": "C:/Users/maxim/Documents/GitHub/Zombies-ProjectIII/ZombiesConfiguration/CharactersLibraryJava.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main">
@@ -95,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669742306126</updated>
-      <workItem from="1669742307609" duration="18077000" />
+      <workItem from="1669742307609" duration="28651000" />
     </task>
     <servers />
   </component>
