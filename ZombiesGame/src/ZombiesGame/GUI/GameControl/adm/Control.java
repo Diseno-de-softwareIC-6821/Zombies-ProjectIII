@@ -2,6 +2,7 @@ package ZombiesGame.GUI.GameControl.adm;
 
 import GameClasses.Defense;
 import GameClasses.Game;
+import GameClasses.IControl;
 import GameClasses.IPrototypeFactory;
 import ZombiesGame.GUI.GameControl.BoardMarks.Board;
 import ZombiesGame.GUI.GameControl.BoardMarks.Square;
@@ -11,7 +12,7 @@ import ZombiesGame.GUI.GameControl.Threads.EnemyThread;
 
 import java.util.ArrayList;
 
-public class Control {
+public class Control  {
 
     private Board board = new Board();
     private Game game = Game.getInstance();
@@ -37,9 +38,15 @@ public class Control {
         if(!square.isOccupated()) {
             //TODO
             Defense defense = (Defense) IPrototypeFactory.get(building);
-            defense.setPositionX(x);
-            defense.setPositionY(y);
-            square.setCharacter(defense);
+            if (defense!=null){
+                defense.setPositionX(x);
+                defense.setPositionY(y);
+                square.setCharacter(defense);
+                game.putBuilding(defense);
+            }else{
+                throw new Error("select one defense");
+
+            }
         }else{
             throw new Error("Square is occupated, choose another one");
         }
@@ -98,4 +105,10 @@ public class Control {
     public Game getGame() {
         return game;
     }
+
+    
+
+    
+    
+    
 }

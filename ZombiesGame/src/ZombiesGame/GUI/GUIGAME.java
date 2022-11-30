@@ -70,11 +70,11 @@ public class GUIGAME extends javax.swing.JFrame {
         jButtonLoadGame = new javax.swing.JButton();
         jButtonExit = new javax.swing.JButton();
         jLabelTitle = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelAvailableSpaces = new javax.swing.JLabel();
         jLabelLevel = new javax.swing.JLabel();
         jButtonLevelUp = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabelBuildingsAvailable = new javax.swing.JLabel();
+        jLabelBuildings = new javax.swing.JLabel();
         jComboBoxBuildings = new javax.swing.JComboBox<>();
         jButtonPut = new javax.swing.JButton();
         jSpinnerX = new javax.swing.JSpinner();
@@ -193,9 +193,9 @@ public class GUIGAME extends javax.swing.JFrame {
         jLabelTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitle.setText("Status");
 
-        jLabel1.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Available Housing spaces");
+        jLabelAvailableSpaces.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
+        jLabelAvailableSpaces.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAvailableSpaces.setText("Available Housing spaces");
 
         jLabelLevel.setFont(new java.awt.Font("Unispace", 0, 12)); // NOI18N
         jLabelLevel.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,13 +212,14 @@ public class GUIGAME extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabelBuildingsAvailable.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
-        jLabelBuildingsAvailable.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelBuildingsAvailable.setText("Buildings");
+        jLabelBuildings.setFont(new java.awt.Font("Unispace", 0, 18)); // NOI18N
+        jLabelBuildings.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBuildings.setText("Buildings");
 
         jComboBoxBuildings.setEnabled(false);
 
         jButtonPut.setText("Put");
+        jButtonPut.setEnabled(false);
         jButtonPut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPutActionPerformed(evt);
@@ -281,7 +282,7 @@ public class GUIGAME extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabelBuildingsAvailable)
+                        .addComponent(jLabelBuildings)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBoxBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -305,7 +306,7 @@ public class GUIGAME extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelBuildingsAvailable)
+                    .addComponent(jLabelBuildings)
                     .addComponent(jComboBoxBuildings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,7 +364,7 @@ public class GUIGAME extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jButtonIniciarNueva.setText("Iniciar Nueva");
+        jButtonIniciarNueva.setText("Iniciar");
         jButtonIniciarNueva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonIniciarNuevaActionPerformed(evt);
@@ -392,7 +393,7 @@ public class GUIGAME extends javax.swing.JFrame {
                             .addComponent(jButtonLevelUp)))
                     .addGroup(jPanelControlsLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel1))
+                        .addComponent(jLabelAvailableSpaces))
                     .addGroup(jPanelControlsLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jButtonExport, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -421,7 +422,7 @@ public class GUIGAME extends javax.swing.JFrame {
                         .addComponent(jButtonLevelUp))
                     .addComponent(jLabelName))
                 .addGap(30, 30, 30)
-                .addComponent(jLabel1)
+                .addComponent(jLabelAvailableSpaces)
                 .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -553,60 +554,74 @@ public class GUIGAME extends javax.swing.JFrame {
         String file = gameBuilder.getFile();
         try {
             gameBuilder.loadDefense(file);
+            JOptionPane.showMessageDialog(null, "Defensas cargadas");
+            this.jComboBoxBuildings.setEnabled(true);
+            this.jButtonLevelUp.setEnabled(true);
+            this.jSpinnerX.setEnabled(true);
+            this.jSpinnerY.setEnabled(true);
         } catch (IOException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Problems to load defenses "+ex);
         }
-        actualizarComboBox();
-        this.jButtonPut.setEnabled(true);
-        this.jComboBoxBuildings.setEnabled(true);
-        this.jButtonLevelUp.setEnabled(true);
-        this.jSpinnerX.setEnabled(true);
-        this.jSpinnerY.setEnabled(true);
+     
+        actualizar();
     }//GEN-LAST:event_jButtonCargarDefensasActionPerformed
-    private void actualizarComboBox (){
+    private void actualizar (){
         jComboBoxBuildings.removeAllItems();
-        for(Defense d : Game.getInstance().getDefenses()){
+        for(Defense d : this.gameBuilder.getDefensesLoaded()){
             jComboBoxBuildings.addItem(d.getName());
         }
         DefaultListModel model = new DefaultListModel();
-        for(Enemy e: Game.getInstance().getEnemies()){
+        for(Enemy e: this.gameBuilder.getEnemiesLoaded()){
             model.addElement(e.getName());
         }
         jList1.setModel(model);
         jComboBoxBuildings.updateUI();
         jList1.updateUI();
+        jLabelLevel.setText("Level "+(Game.getInstance().getLevel()));   
     }
     private void jButtonCargarEnemigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarEnemigosActionPerformed
 
         String file = gameBuilder.getFile();
         try {
             gameBuilder.loadEnemy(file);
+            JOptionPane.showMessageDialog(null, "Enemigos cargadas");
+                this.jButtonPut.setEnabled(true);
+                this.jComboBoxBuildings.setEnabled(true);
+                this.jButtonLevelUp.setEnabled(true);
+                this.jSpinnerX.setEnabled(true);
+                this.jSpinnerY.setEnabled(true);
         } catch (IOException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Problems to load characters "+ex);
         }
-        actualizarComboBox();
-        this.jButtonPut.setEnabled(true);
-        this.jComboBoxBuildings.setEnabled(true);
-        this.jButtonLevelUp.setEnabled(true);
-        this.jSpinnerX.setEnabled(true);
-        this.jSpinnerY.setEnabled(true);
+
+        actualizar();
+
     }//GEN-LAST:event_jButtonCargarEnemigosActionPerformed
 
     private void jButtonPutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPutActionPerformed
            
         int x  = (int) jSpinnerX.getValue();
         int y = (int) jSpinnerY.getValue();
-        control.putBuilding(x, y,(String)jComboBoxBuildings.getSelectedItem());
-        
+        try{
+            control.putBuilding(x, y,(String)jComboBoxBuildings.getSelectedItem());
+        }catch(Error e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        updateGameComponents();
     }//GEN-LAST:event_jButtonPutActionPerformed
-
+    public void updateGameComponents(){
+        this.jLabelLevel.setText("Level "+String.valueOf(Game.getInstance().getLevel()));
+        this.jLabelAvailableSpaces.setText("Available housing spaces: "+ String.valueOf(Game.getInstance().getHousingSpaces()));
+    }
     private void jButtonIniciarNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarNuevaActionPerformed
         String player =JOptionPane.showInputDialog("Digite su nombre: ");
         Game.getInstance().load(this.gameBuilder.load(player));
         jLabelName.setText("Player : "+player);
         this.jButtonCargarDefensas.setEnabled(false);
         this.jButtonCargarEnemigos.setEnabled(false);
-        actualizarComboBox();
+        actualizar();
+        updateGameComponents();
+        this.jButtonPut.setEnabled(true);
     }//GEN-LAST:event_jButtonIniciarNuevaActionPerformed
     private String getFile(){
         JFileChooser fc = new JFileChooser();
@@ -664,8 +679,8 @@ public class GUIGAME extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPut;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JComboBox<String> jComboBoxBuildings;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelBuildingsAvailable;
+    private javax.swing.JLabel jLabelAvailableSpaces;
+    private javax.swing.JLabel jLabelBuildings;
     private javax.swing.JLabel jLabelEnemies;
     private javax.swing.JLabel jLabelLevel;
     private javax.swing.JLabel jLabelName;

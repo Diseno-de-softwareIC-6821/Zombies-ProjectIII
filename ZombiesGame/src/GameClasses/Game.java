@@ -18,7 +18,7 @@ import java.util.ArrayList;
  *
  * @author Esteb
  */
-public class Game extends ThreadComponent implements IFile<Game,String> , Serializable, iLeveled, Runnable { //serializable to export Game
+public class Game extends ThreadComponent implements IFile<Game,String> , Serializable, iLeveled, Runnable , IControl{ //serializable to export Game
     private String name = "No name";
     private Defense life_tree = Settings.LIFE_TREE;
     private ArrayList<Enemy> enemies = new ArrayList<>();
@@ -35,6 +35,14 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
             instance = new Game();
         }
         return instance;
+    }
+
+    public int getHousingSpaces() {
+        return housingSpaces;
+    }
+    @Override
+    public void putBuilding(Defense defense){
+        housingSpaces-=defense.getHousingSpace();
     }
 
     @Override
@@ -169,6 +177,15 @@ public class Game extends ThreadComponent implements IFile<Game,String> , Serial
             game.setEnemies(enemiesLoaded);
             return game;
         }
+
+        public ArrayList<Defense> getDefensesLoaded() {
+            return defensesLoaded;
+        }
+
+        public ArrayList<Enemy> getEnemiesLoaded() {
+            return enemiesLoaded;
+        }
+        
     }
 
 }
