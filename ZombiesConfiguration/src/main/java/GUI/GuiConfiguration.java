@@ -16,6 +16,8 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class GuiConfiguration extends javax.swing.JFrame {
+    String routeE = "";
+    String routeD = "";
     private final String backGroundRoute = "src\\main\\java\\Images\\fondoEstrellado.jpg";
     GUILogin parent;
     /**
@@ -82,6 +84,7 @@ public class GuiConfiguration extends javax.swing.JFrame {
                 setScope(scope_).
                 setHousingSpace(housingSpace_).
                 setType(type_).
+                //setCurrentTexture();
                 build();
         System.out.println("ZOMBIE CREADO EXITOSAMENTE");
 
@@ -694,33 +697,29 @@ public class GuiConfiguration extends javax.swing.JFrame {
         this.setEnabled(false);
         String tempRoute = Builder.getInstance().getActualEnemyRoute();
         int texttype = jComboBoxEnemyTextureType.getSelectedIndex();
-        Builder.getInstance().getEnemyBuilder()
-                .addTexture(texttype,tempRoute);
-         JOptionPane.showMessageDialog(null, "Enemigo añadido!\n"+tempRoute);
+        JOptionPane.showMessageDialog(null, "Enemigo añadido!\n"+tempRoute);
     }//GEN-LAST:event_jButtonEnemyTextureAddActionPerformed
 
     private void jButtonBuildingTextureAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuildingTextureAddActionPerformed
         this.setEnabled(false);
-        Builder.getInstance().getDefenseBuilder()
-                .addTexture(jComboBoxBuildingTextureType.getSelectedIndex(),Builder.getInstance().getActualDefenseRoute());
         JOptionPane.showMessageDialog(null, "Defensa agregada\n"+Builder.getInstance().getActualDefenseRoute());
     }//GEN-LAST:event_jButtonBuildingTextureAddActionPerformed
 
     private void jButtonEnemyTextureSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnemyTextureSearchActionPerformed
-            String route = chooseImage(jPanelEnemyView, jButtonEnemyTextureAdd);
-            if(!route.isBlank()){
-                Builder.getInstance().setActualEnemyRoute(route);
-                pintarImagen(jPanelEnemyView, route);
+            routeE = chooseImage(jPanelEnemyView, jButtonEnemyTextureAdd);
+            if(!routeE.isBlank()){
+                Builder.getInstance().setActualEnemyRoute(routeE);
+                pintarImagen(jPanelEnemyView, routeE);
                 jButtonEnemyTextureAdd.setEnabled(true);
             }
        
     }//GEN-LAST:event_jButtonEnemyTextureSearchActionPerformed
 
     private void jButtonBuildingTextureSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuildingTextureSearchActionPerformed
-            String route = chooseImage(jPanelBuildingView, jButtonBuildingTextureAdd);
-            if(!route.isBlank()){
-               Builder.getInstance().setActualDefenseRoute(route);
-               pintarImagen(jPanelBuildingView, route);
+        routeD = chooseImage(jPanelBuildingView, jButtonBuildingTextureAdd);
+            if(!routeD.isBlank()){
+               Builder.getInstance().setActualDefenseRoute(routeD);
+               pintarImagen(jPanelBuildingView, routeD);
                jButtonEnemyTextureAdd.setEnabled(true);
             }
     }//GEN-LAST:event_jButtonBuildingTextureSearchActionPerformed
@@ -793,7 +792,6 @@ public class GuiConfiguration extends javax.swing.JFrame {
         FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF & PNG", "jpg", "gif","png");
         fc.setFileFilter(filter);
         int selection = fc.showOpenDialog(null);
-
         String route = "";
         if (selection == JFileChooser.APPROVE_OPTION) {
             //méFile fichero = fc.getSelectedFile();todo para leer el archivo y mostrarlo en el textArea

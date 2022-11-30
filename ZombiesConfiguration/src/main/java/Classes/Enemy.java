@@ -42,12 +42,7 @@ public class Enemy  extends Character{
             characterBuilder.setName(name);
             return this;
         }
-        public EnemyBuilder addTexture(int key, String value){
-            System.out.println("Before adding texture");
-            characterBuilder.addTexture(key, value);
-            System.out.println("After adding texture");
-            return this;
-        }
+
         public EnemyBuilder setCurrentTexture(String currentTexture){
             characterBuilder.setCurrentTexture(currentTexture);
             return this;

@@ -5,29 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Enums/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Builder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Defense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Defense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Classes/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enums/eAttackType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enums/eAttackType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enums/eTexture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GuiConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Defense$DefenseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Defense$DefenseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Defense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Defense.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Enemy$EnemyBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Enemy$EnemyBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Classes/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Classes/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enums/eAttackType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Enums/eAttackType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enums/eTexture$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enums/eTexture$eTextureType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Enums/eTexture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUILogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUILogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GuiConfiguration$2.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +24,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -49,14 +37,43 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectId" id="2IEMUZZahzVY8MyVzaJA8bI8nQg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "213"
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "213",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/maxim/Documents/GitHub/Zombies-ProjectIII/ZombiesConfiguration",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.Main" />
+      <module name="ZombiesConfiguration" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.Main" />
       <module name="ZombiesConfiguration" />
@@ -64,9 +81,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fe2d173-a744-43a6-af8a-ad9e427260c1" name="Changes" comment="" />
+      <created>1669742306126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669742306126</updated>
+      <workItem from="1669742307609" duration="18077000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

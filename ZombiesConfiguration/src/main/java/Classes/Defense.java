@@ -43,10 +43,7 @@ public class Defense extends Character {
             characterBuilder.setName(name);
             return this;
         }
-        public DefenseBuilder addTexture(int key, String value){
-            characterBuilder.addTexture(key, value);
-            return this;
-        }
+
         public DefenseBuilder setCurrentTexture(String currentTexture){
             characterBuilder.setCurrentTexture(currentTexture);
             return this;
